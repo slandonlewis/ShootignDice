@@ -30,6 +30,44 @@ namespace ShootingDice
 
             player1.Play(large);
 
+            Player smackTalker = new SmackTalkingPlayer()
+            {
+                Name = "Sassy",
+                Taunt = "You are trash!"
+            };
+
+            // new one higher
+            Player oneHigher = new OneHigherPlayer();
+            oneHigher.Name = "Higher";
+            oneHigher.Play(player3);
+
+            // new human player
+            Player human = new HumanPlayer();
+            human.Name = "Human";
+            human.Play(player3);
+
+            // new creative smack talker
+            Player creative = new CreativeSmackTalkingPlayer();
+            creative.Name = "Jim";
+            creative.Play(player2);
+
+            // new sore loser
+            Player soreLoser = new SoreLoserPlayer();
+            soreLoser.Name = "Matt";
+            // soreLoser.Play(large);
+
+            // new upper half
+            Player upperHalf = new UpperHalfPlayer();
+            upperHalf.Name = "Ichigo";
+            upperHalf.Play(player3);
+            upperHalf.Play(player1);
+
+            Console.WriteLine("-------------------");
+
+            smackTalker.Play(player1);
+            Console.WriteLine("-------------------");
+            player1.Play(smackTalker);
+
             Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>() {
